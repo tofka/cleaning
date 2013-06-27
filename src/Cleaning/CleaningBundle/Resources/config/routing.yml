@@ -1,3 +1,1 @@
-cleaning_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: CleaningBundle:Default:index }
+
