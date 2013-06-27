@@ -1,0 +1,4 @@
+cleaning:
+    resource: "@CleaningBundle/Resources/config/routing.yml"
+    prefix:   /
+
