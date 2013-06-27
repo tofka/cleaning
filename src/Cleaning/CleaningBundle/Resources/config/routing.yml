@@ -1,1 +1,5 @@
-
+CleaningCleaningBundle_homepage:
+    pattern:  /
+    defaults: { _controller: CleaningBundle:Page:index }
+    requirements:
+        _method:  GET
