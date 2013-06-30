@@ -1,0 +1,35 @@
+1. Skapa Bundle:
+php app/console generate:bundle --namespace=Cleaning/CleaningBundle --format=yml
+Bundeln registreras automatiskt i app/AppKernel.php genom:
+    public function registerBundles()
+    {
+        $bundles = array(
+        // ..
+            new Cleaning\CleaningBundle\CleaningCleaningBundle(),
+        );
+        // ..
+
+        return $bundles;
+    }
+
+2. Rout skapas automatiskt i app/config/routing.yml:
+	CleaningCleaningBundle:
+	    resource: "@CleaningCleaningBundle/Resources/config/routing.yml"
+	    prefix:   /
+
+3. Skapa controller (PageController) med actionmetoder, tex index, about...
+
+4. Skapa templates:
+Tre nivåer: 
+	app/Resources/views/base.html.twig - Baslayout
+	src/Cleaning/CleaningBundle/Resources/views/layout.html.twig - Bundletemplate, ärver från baslayout och
+	overridar valda delar.
+	src/Cleaning/CleaningBundle/Resources/views/Page/index.html.twig - Controllerlayout, knuten till en 
+		viss action i controllern, tex "render('CleaningCleaningBundle:Page:index.html.twig')" genererar index-template.
+
+5. Skapa rout för startsida på src/Cleaning/CleaningBundle/Resources/config/routing.yml
+	CleaningCleaningBundle_homepage:
+	    pattern:  /
+	    defaults: { _controller: CleaningCleaningBundle:Page:index }
+	    requirements:
+	        _method:  GET

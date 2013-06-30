@@ -1,0 +1,29 @@
+<?php
+
+namespace Cleaning\CleaningBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="event")
+ */
+class Event
+{
+	/**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $timestamp;
+
+    protected $task_ID;
+
+    protected $person_ID;
+    
+    protected $room_ID;
+}
