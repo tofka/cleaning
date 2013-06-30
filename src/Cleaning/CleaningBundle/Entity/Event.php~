@@ -21,9 +21,54 @@ class Event
      */
     protected $timestamp;
 
-    protected $task_ID;
+    /**
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="event")
+     * @ORM\JoinColumn(name="task_id", referencedColumnName="id")
+     */
+    protected $task;
 
-    protected $person_ID;
+     /**
+     * @ORM\OneToMany(targetEntity="Person", mappedBy="event")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
+     */
+    protected $person;
     
-    protected $room_ID;
+     /**
+     * @ORM\OneToMany(targetEntity="Room", mappedBy="event")
+     * @ORM\JoinColumn(name="room_id", referencedColumnName="id")
+     */
+    protected $room;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set timestamp
+     *
+     * @param \DateTime $timestamp
+     * @return Event
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->timestamp = $timestamp;
+    
+        return $this;
+    }
+
+    /**
+     * Get timestamp
+     *
+     * @return \DateTime 
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
+    }
 }

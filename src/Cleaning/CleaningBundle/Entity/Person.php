@@ -24,6 +24,12 @@ class Person
 
     protected $name;
 
+ /**
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="person")
+     */
+
+    protected $event;
+
     /**
      * Get id
      *
@@ -55,5 +61,28 @@ class Person
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set event
+     *
+     * @param \Cleaning\CleaningBundle\Entity\Event $event
+     * @return Person
+     */
+    public function setEvent(\Cleaning\CleaningBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Cleaning\CleaningBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

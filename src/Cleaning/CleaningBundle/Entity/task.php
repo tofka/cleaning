@@ -25,6 +25,12 @@ class Task
     protected $name;
 
     /**
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="task")
+     */
+
+    protected $event;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -55,5 +61,28 @@ class Task
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set event
+     *
+     * @param \Cleaning\CleaningBundle\Entity\Event $event
+     * @return Task
+     */
+    public function setEvent(\Cleaning\CleaningBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Cleaning\CleaningBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

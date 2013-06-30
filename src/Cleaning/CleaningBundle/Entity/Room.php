@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="room")
  */
 
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="room")
+ */
 class Room
 {
 	/**
@@ -23,6 +28,12 @@ class Room
      */
 
     protected $name;
+
+   /**
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="room")
+     */
+
+    protected $event;
 
     /**
      * Get id
@@ -55,5 +66,28 @@ class Room
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set event
+     *
+     * @param \Cleaning\CleaningBundle\Entity\Event $event
+     * @return Room
+     */
+    public function setEvent(\Cleaning\CleaningBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Cleaning\CleaningBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }
