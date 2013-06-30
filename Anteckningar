@@ -33,3 +33,13 @@ Tre nivåer:
 	    defaults: { _controller: CleaningCleaningBundle:Page:index }
 	    requirements:
 	        _method:  GET
+
+6. Skapa entities och variabler. Generera get/set:
+php app/console doctrine:generate:entities Cleaning\CleaningBundle
+Skapa relationer med Data Annotations
+
+7. kapa databas:
+php app/console doctrine:database:create
+
+8. Kör migrering:
+php app/console doctrine:schema:update --force
