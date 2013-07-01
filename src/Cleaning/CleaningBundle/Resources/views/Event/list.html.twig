@@ -1,0 +1,12 @@
+{% extends 'CleaningBundle::layout.html.twig' %}
+	{% block body %}
+		<h2>Utfört</h2>
+		{% for event in events %}
+            <h3>{{ event.timestamp|date('l, F j, Y') }}</h3>
+	       
+	        <h3>{{ event.id }}</h3>
+	        <h3>{{ event.person.name }}</h3> 
+	        <h3>{{ event.task.name }}</h3>
+	        <h3>{{ event.room.name }}</h3>       	
+      	{% endfor %}
+	{% endblock %}

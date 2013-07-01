@@ -65,8 +65,20 @@ body {
 
 .main-col a { color: #F48A00; }
 .main-col h1,
-.main-col h2
-    { line-height: 1.2em; font-size: 32px;  font-weight: normal; color: #F48A00; }
+.main-col h2 { 
+	line-height: 1.2em; 
+	font-size: 3em;  
+	font-weight: normal; 
+	color: #F48A00; 
+}
+
+.main-col h3 { 
+	line-height: 1.2em; 
+	font-size: 2em;  
+	font-weight: normal; 
+	color: #F48A00; 
+}
+
 .main-col p { line-height: 1.5em; margin-bottom: 20px; }
 
 #footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }

@@ -1,0 +1,7 @@
+{% extends 'CleaningBundle::layout.html.twig' %}
+	{% block body %}
+		<h2>Personer</h2>
+		{% for person in persons %}           
+    	    <h3>{{ person.name }}</h3>        	
+      	{% endfor %}
+	{% endblock %}
