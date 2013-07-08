@@ -4,37 +4,11 @@ CleaningCleaningBundle_homepage:
     requirements:
         _method:  GET
 
-CleaningBundle_room_show:
-    pattern:  /{id}
-    defaults: { _controller: CleaningBundle:Room:show }
-    requirements:
-        _method:  GET
-        id: \d+
 
-CleaningBundle_room_list:
-    pattern:  /rooms
-    defaults: { _controller: CleaningBundle:Room:list }
-    requirements:
-        _method:  GET
-        id: \d+
 
-CleaningBundle_person_list:
-    pattern:  /persons
-    defaults: { _controller: CleaningBundle:Person:list }
-    requirements:
-        _method:  GET
-        id: \d+
 
-CleaningBundle_task_list:
-    pattern:  /tasks
-    defaults: { _controller: CleaningBundle:Task:list }
-    requirements:
-        _method:  GET
-        id: \d+
+CleaningBundle:
+    resource: "@CleaningBundle/Controller/"
+    type: annotation
+    prefix: /
 
-CleaningBundle_event_list:
-    pattern:  /events
-    defaults: { _controller: CleaningBundle:Event:list }
-    requirements:
-        _method:  GET
-        id: \d+
