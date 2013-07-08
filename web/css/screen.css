@@ -79,6 +79,14 @@ body {
 	color: #F48A00; 
 }
 
-.main-col p { line-height: 1.5em; margin-bottom: 20px; }
+.main-col p { 
+	line-height: 1.5em; 
+	margin-bottom: 20px; 
+	font-size: 1.6em;
+}
+
+.entity-list li {
+	font-size: 1.6em;
+}
 
 #footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
