@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h2>Färdiga uppgifter</h2>
+    <table class="summary">
+        <tr>
+            <th>Rum</th>
+            <th>Uppgift</th>
+            <th>Person</th>
+            <th>Tidpunkt</th>
+        </tr>    
+        {% for entity in entities %}
+         <tr>
+             <td>    
+                {{ entity.room.name }} 
+            </td>
+             <td>    
+                {{ entity.task.name }} 
+            </td>
+             <td>    
+                {{ entity.person.name }} 
+            </td>
+             <td>    
+                {{ entity.timestamp|date('l, F j, Y') }} 
+            </td>
+        </tr>
+    {% endfor %} 
+    </table>      
+    <p><a href="{{ path('event_new') }}">
+        Create a new entry
+    </a></p>   
+{% endblock %}

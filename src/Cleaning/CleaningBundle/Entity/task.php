@@ -63,6 +63,11 @@ class Task
         return $this->name;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     /**
      * Set event
      *
@@ -85,4 +90,6 @@ class Task
     {
         return $this->event;
     }
+
+   
 }

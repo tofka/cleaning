@@ -115,6 +115,18 @@ class Event
     }
 
     /**
+    * Set task
+    *
+    */
+
+    public function setTask($task)
+    {
+        $this->task = $task;
+    
+        return $this;
+    }   
+
+    /**
      * Add person
      *
      * @param \Cleaning\CleaningBundle\Entity\Person $person
@@ -145,6 +157,17 @@ class Event
     public function getPerson()
     {
         return $this->person;
+    }
+
+   /**
+    * Set person
+    *
+    */
+    public function setPerson($person)
+    {
+        $this->person = $person;
+    
+        return $this;
     }
 
     /**
@@ -178,5 +201,17 @@ class Event
     public function getRoom()
     {
         return $this->room;
+    }
+
+    /**
+    * Set room
+    *
+    */
+    
+    public function setRoom($room)
+    {
+        $this->room = $room;
+    
+        return $this;
     }
 }

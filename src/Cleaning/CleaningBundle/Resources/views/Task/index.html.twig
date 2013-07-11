@@ -1,13 +1,41 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h2>Uppgifter</h2>
-     {% for entity in entities %}
-    <ul class="entity-list">
-        <li><a href="{{ path('task_show', { 'id': entity.id }) }}">{{ entity.name }}</a> <a href="{{ path('task_show', { 'id': entity.id }) }}">Visa</a> <a href="{{ path('task_edit', { 'id': entity.id }) }}">Ändra</a> <a href="{{ path('task_delete', { 'id': entity.id }) }}">Ta bort</a></li>
+    <h1>Task list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('task_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('task_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('task_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('task_new') }}">
+                Create a new entry
+            </a>
+        </li>
     </ul>
-    {% endfor %}       
-    <p><a href="{{ path('task_new') }}">
-        Create a new entry
-    </a></p>   
-{% endblock %}
+    {% endblock %}

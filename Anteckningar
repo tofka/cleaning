@@ -38,8 +38,13 @@ Tre nivåer:
 php app/console doctrine:generate:entities Cleaning\CleaningBundle
 Skapa relationer med Data Annotations
 
-7. kapa databas:
+7. Skapa databas:
 php app/console doctrine:database:create
 
 8. Kör migrering:
 php app/console doctrine:schema:update --force
+
+CRUD:
+http://cholakovit.com/en/1100/symfony-2-generating-bundle-entity-and-crud-module/
+	CRUD-kommando:
+    php app/console/ generate:doctrine:crud
