@@ -122,3 +122,8 @@ body {
 	text-align: center; 
 	color: #aaa; 
 }
+
+.big {
+	font-size: 4em;
+	font-weight: bold;
+}

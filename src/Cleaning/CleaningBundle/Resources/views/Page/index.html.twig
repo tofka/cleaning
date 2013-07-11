@@ -1,5 +1,40 @@
 {% extends 'CleaningBundle::layout.html.twig' %}
 
+
 {% block body %}
-    Blog homepage
+	<ul class="entity-list">
+		<li><a href="{{ path('room') }}">Lista rum</a></li>
+		<li><a href="{{ path('task') }}">Lista uppgifter</a></li>
+		<li><a href="{{ path('person') }}">Lista personer</a></li>
+	</ul>
+
+
+    <h2>Färdiga uppgifter</h2>
+    <a href="{{ path('event_new') }}">
+    	<button class="big">Bocka av en uppgift</button>
+    </a>
+    <table class="summary">
+        <tr>
+            <th>Rum</th>
+            <th>Uppgift</th>
+            <th>Person</th>
+            <th>Tidpunkt</th>
+        </tr>    
+        {% for entity in entities %}
+         <tr>
+             <td>    
+                {{ entity.room.name }} 
+            </td>
+             <td>    
+                {{ entity.task.name }} 
+            </td>
+             <td>    
+                {{ entity.person.name }} 
+            </td>
+             <td>    
+                {{ entity.timestamp|date('l, F j, Y') }} 
+            </td>
+        </tr>
+    {% endfor %} 
+    </table>      
 {% endblock %}
